@@ -1,0 +1,65 @@
+cabal-version:       2.0
+name:                there-is-a-room
+version:             0.0.0
+synopsis:            Object model storage
+description:         Object model storage
+homepage:            https://github.com/PPKFS/there-is-a-room
+bug-reports:         https://github.com/PPKFS/there-is-a-room/issues
+license:             MIT
+license-file:        LICENSE
+author:              PPK
+maintainer:          thecommunistduck@hotmail.co.uk
+copyright:           2021 PPK
+category:            Data
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.6.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/PPKFS/there-is-a-room.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     ThereIsARoom
+                       Prelude
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , relude
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+
+test-suite there-is-a-room-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+
+  build-depends:       base-noprelude ^>= 4.12.0.0
+                     , there-is-a-room
+                     , relude
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
